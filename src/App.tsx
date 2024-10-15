@@ -2,8 +2,8 @@ import { createSignal } from 'solid-js'
 import solidLogo from './assets/solid.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from 'solid-bootstrap';
-
+import { Button } from 'solid-bootstrap'
+import DemoMd from './demo.md'
 
 function App() {
   const [count, setCount] = createSignal(0)
@@ -30,6 +30,7 @@ function App() {
       <p class="read-the-docs">
         Click on the Vite and Solid logos to learn more
       </p>
+      <DemoMd />
     </>
   )
 }
