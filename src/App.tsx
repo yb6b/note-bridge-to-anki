@@ -1,38 +1,18 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from 'solid-bootstrap'
-import DemoMd from './demo.md'
+import Navbar from "@/layouts/Navbar"
+import { ErrorBoundary, lazy } from "solid-js"
 
-function App() {
-  const [count, setCount] = createSignal(0)
+import { HashRouter, Route } from "@solidjs/router"
 
+const Mubu = lazy(() => import("@/pages/Mubu.tsx"))
+const DemoMd = lazy(() => import("@/pages/docs.mdx"))
+
+export default function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-      <DemoMd />
+      <HashRouter root={Navbar}>
+        <Route path="/" component={Mubu} />
+        <Route path="/docs" component={DemoMd} />
+      </HashRouter>
     </>
   )
 }
-
-export default App

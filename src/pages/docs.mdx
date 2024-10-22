@@ -1,0 +1,64 @@
+import cfgImg from '@/assets/config-anki-connect.png';
+import instImge from '@/assets/install-anki-connect.png';
+
+
+# 笔记转Anki
+
+本网页旨在把各大笔记软件的笔记批量转为Anki卡片。目前支持幕布的OPML格式，后续将支持更多笔记软件。
+
+网页是开源免费的，源代码在 [GitHub](https://github.com/yb6b/note-bridge-to-anki)，欢迎贡献。
+
+
+## 注意事项
+
+1. 请使用最新的浏览器，比如 [edge](https://www.microsoft.com/zh-cn/edge/download)、[chrome](https://www.google.cn/chrome/)……
+2. 如果你没有用过 Anki 批量导入功能，请先阅读 [Anki的导入说明](https://docs.ankiweb.net/importing/text-files.html)（[中文版](http://anki-doc.youlan.pro/ImportingTextFiles.html)），再在Anki里新建个账户做实验。
+3. 如果你没有用过 AnkiConnect 插件，也请先新建个账户做实验，避免失误操作影响了你的珍贵数据。
+4. 个人开发，能力有限，本网页无力为你的数据安全负责，再三强调：请先做实验。
+
+### 安装 AnkiConnect插件
+
+AnkiConnect 插件可以让其他软件访问 Anki 软件里的数据。
+
+如何安装 AnkiConnect 插件？
+1. 打开 Anki；
+2. 点击菜单栏的“工具”，选择“插件”；
+3. 点击插件窗口的“获取插件…”按钮；
+4. 在安装插件窗口的“代码”输入框内填：**2055492159**；
+5. 确定，等待，重新启动 Anki。
+
+
+<p><img src={instImge} width="350" alt="安装AnkiConnect" /></p>
+
+安装完 AnkiConnect 插件之后，还要设置 AnkiConnect，让它赋予本网页访问Anki的权限。
+1. 打开 Anki；
+2. 点击菜单栏的“工具”，选择“插件”，打开插件窗口；
+3. **双击**AnkiConnect列表项；
+4. 在弹出的“AnkiConnect 插件设置”窗口里修改，为 `webCorsOriginList` 下添加本网页的地址 `https://yb6b.github.io`；
+5. 确定，重新启动 Anki。
+
+<p><img src={cfgImg} width="350" alt="配置AnkiConnect" /></p>
+
+<details>
+<summary>AnkiConnect插件的配置文件</summary>
+
+你也可以直接把下文复制到你的配置文件中：
+```json
+{
+    "apiKey": null,
+    "apiLogPath": null,
+    "ignoreOriginList": [],
+    "webBindAddress": "127.0.0.1",
+    "webBindPort": 8765,
+    "webCorsOriginList": [
+        "https://yb6b.github.io",
+        "http://localhost"
+    ]
+}
+```
+</details>
+
+<br />
+## 如何操作本网页
+
+本网页的交互设计中含有许多弹出提示，读读它们就行了。
