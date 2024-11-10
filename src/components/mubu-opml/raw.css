@@ -1,0 +1,228 @@
+/*不建议在同一处内容上同时使用多种样式，例如既有下划线，又有加粗、斜体等，样式组合种类会成指数级上升，会变得异常复杂 */
+
+/*说明：这是针对卡片全局的设置*/
+.card {
+    font-family: myfont;
+    font-size: 18px;
+    font-weight: light;
+    word-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 2.0em;
+    text-align: left;
+    color: black;
+    background-color: white;
+}
+
+/*根据说明去改，如果从笔记的编辑窗口进来，右侧可以实时预览效果，大部分可以当成英文就认识了，实在不知道的不要改，改之前记得导出模板备份哦*/
+
+/*下面是幕布里节点内容的样式，留空即使用默认样式*/
+div._mubu_text {
+    margin: 1.5em 0em;
+}
+
+/*下面是幕布里“描述”内容的样式*/
+div._mubu_note {
+    color: gray;
+    font-size: 75%;
+    overflow: hidden;
+    height: 1.8em;
+    cursor: pointer;
+    line-height: 2.0em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div._mubu_note:hover {
+    height: auto;
+    white-space: normal;
+}
+
+/*下面是幕布里图片的样式*/
+img.document_image {
+    max-width: 100%;
+    height: auto;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+}
+
+/*幕布里高亮的样式*/
+.highlight-yellow {
+    background-color: #ffff00;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+/*幕布里加粗的样式*/
+span.bold {
+    font-weight: bolder;
+    margin: 0px 2px;
+}
+
+/*幕布里斜体的样式*/
+span.italic {
+    font-style: italic;
+    margin: 0px 2px;
+}
+
+/*幕布里标记下划线的内容会显示成类似挖空的效果，如果导入后继续编辑挖空，可直接用Anki的添加下划线编辑按钮*/
+/*问答模板里的划线，悬浮后显示*/
+span.underline,
+u {
+    color: transparent;
+    font-weight: normal;
+    border-bottom: 2px solid black;
+    padding: 0px 2px 2px 3px;
+    margin: 0px 2px;
+    text-decoration: none;
+}
+
+span.underline:hover,
+u:hover {
+    color: #ea4335;
+    font-weight: bolder;
+    border-bottom: 2px solid black;
+    padding: 0px 2px 2px 3px;
+    margin: 0px 2px;
+    text-decoration: none;
+}
+
+/*划线模板删除线挖空*/
+span.strikethrough {
+    font-weight: normal;
+    padding: 0px 2px 2px 3px;
+    margin: 0px 2px;
+    text-decoration: line-through;
+}
+
+
+/*幕布里的超链接样式*/
+a .content-link-text {
+    text-decoration: underline;
+    margin: 0px 2px;
+}
+
+a .content-link-text:after {
+    content: "⇱";
+}
+
+/*幕布里的各种颜色样式*/
+span.text-color-yellow {
+    color: #df8400;
+}
+
+span.text-color-red {
+    color: #ef042a;
+}
+
+span.text-color-green {
+    color: #4eb434;
+}
+
+span.text-color-blue {
+    color: #0091ff;
+}
+
+span.text-color-purple {
+    color: #7a5fff;
+}
+
+/*幕布里的代码块样式*/
+span.codespan {
+    color: #BC4E3A;
+    font: aril;
+    background: #EBECEC;
+    margin: 0px 2px;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+
+.biaoqian {
+    font-weight: bolder;
+    display: block;
+    color: black;
+
+    /*以下是长度自适应的设计*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 95%;
+    /* 你可以根据需要设置宽度 */
+    border: 0px solid #ccc;
+    /* 可选，仅用于可视化边界 */
+
+    /* 设置渐变背景（与上面省略配合用效果最好） */
+    background: linear-gradient(to right, black 0%, gray 50%, transparent 95%);
+
+    /* 设置背景仅剪裁到文字 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 设置文字颜色为透明，以便渐变背景可见 */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+}
+
+/*这里规定了下划线样式内如果有其他样式，则不生效*/
+u b,
+u i,
+u .text-color-yellow,
+u .text-color-red,
+u .text-color-green,
+u .text-color-blue,
+u .text-color-purple {
+    all: unset;
+}
+
+
+
+u {
+    display: inline;
+}
+
+/*Anki 里的自带的加粗bold 红色白字*/
+b {
+    color: white;
+    font-weight: bolder;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin: 0px 2px;
+    text-decoration: none;
+    background-color: #ea4335;
+}
+
+/*Anki 里的自带的斜体 italic 绿底白字*/
+i {
+    color: white;
+    font-weight: bolder;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin: 0px 2px;
+    text-decoration: none;
+    background-color: #34a853;
+}
+
+
+
+/*通过title属性添加了修改的笔记*/
+.tt:after {
+    content: "💭";
+    vertical-align: super;
+    font-size: smaller;
+}
+
+
+
+/*字体,确保最后一行（如果字体总是同步不成功，提示加载失败，可以删除下面）*/
+
+@font-face {
+    font-family: myfont;
+    src: url('_yuwen.ttf');
+}

@@ -1,0 +1,14 @@
+// 来自 https://file-1255751603.cos.ap-nanjing.myqcloud.com/mubu2anki.html
+
+// 这里只是把 raw.css 里的压缩一下
+export const css: string = `.card{font-size:18px;font-weight:light;word-spacing:.1em;letter-spacing:.1em;line-height:2em;text-align:left;color:#000;background-color:#fff}div._mubu_text{margin:1.5em 0}div._mubu_note{color:gray;font-size:75%;overflow:hidden;height:1.8em;cursor:pointer;line-height:2em;text-overflow:ellipsis;white-space:nowrap}div._mubu_note:hover{height:auto;white-space:normal}img.document_image{max-width:100%;height:auto;border:0px solid transparent;border-radius:10px;margin-top:2em;margin-bottom:2em;outline:2px solid transparent;outline-offset:-2px}.highlight-yellow{background-color:#ff0;padding:2px 4px;border-radius:5px}span.bold{font-weight:bolder;margin:0 2px}span.italic{font-style:italic;margin:0 2px}span.underline,u{color:transparent;font-weight:400;border-bottom:2px solid black;padding:0 2px 2px 3px;margin:0 2px;text-decoration:none}span.underline:hover,u:hover{color:#ea4335;font-weight:bolder;border-bottom:2px solid black;padding:0 2px 2px 3px;margin:0 2px;text-decoration:none}span.strikethrough{font-weight:400;padding:0 2px 2px 3px;margin:0 2px;text-decoration:line-through}a .content-link-text{text-decoration:underline;margin:0 2px}a .content-link-text:after{content:"\\21f1"}span.text-color-yellow{color:#df8400}span.text-color-red{color:#ef042a}span.text-color-green{color:#4eb434}span.text-color-blue{color:#0091ff}span.text-color-purple{color:#7a5fff}span.codespan{color:#bc4e3a;font:aril;background:#ebecec;margin:0 2px;padding:2px 6px;border-radius:5px}.biaoqian{font-weight:bolder;display:block;color:#000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:95%;border:0px solid #ccc;background:linear-gradient(to right,black 0%,gray 50%,transparent 95%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}u b,u i,u .text-color-yellow,u .text-color-red,u .text-color-green,u .text-color-blue,u .text-color-purple{all:unset}u{display:inline}b{color:#fff;font-weight:bolder;border:0px solid transparent;border-radius:5px;padding:2px 4px;margin:0 2px;text-decoration:none;background-color:#ea4335}i{color:#fff;font-weight:bolder;border:0px solid transparent;border-radius:5px;padding:2px 4px;margin:0 2px;text-decoration:none;background-color:#34a853}.tt:after{content:"\\1f4ad";vertical-align:super;font-size:smaller}`
+
+export const clozeFront = `{{#Tags}}<div class="biaoqian">{{Tags}}</div>{{/Tags}}
+{{cloze:text}}`
+
+export const clozeBack = `{{#Tags}}<div class="biaoqian">{{Tags}}</div>{{/Tags}}
+{{cloze:text}}<hr><div style="color: #4d4d4d;">{{back}}</div>`
+
+export const basicFront = `{{#Tags}}<div class="biaoqian">{{Tags}}</div>{{/Tags}}{{front}}`
+
+export const basicBack = `{{FrontSide}}<hr>{{back}}`
