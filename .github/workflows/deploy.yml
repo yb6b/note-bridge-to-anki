@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: pnpm i && pnpm build
+      - run: pnpm i && pnpm build-only
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v2
         with:

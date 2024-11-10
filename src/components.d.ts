@@ -8,8 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BeforeAll: typeof import('./components/help/before-all.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    IconBtnTooltip: typeof import('./components/base/icon-btn-tooltip.vue')['default']
     InputAnkiConnectUrl: typeof import('./components/input-anki-connect-url.vue')['default']
     OpenAnkiConnectCard: typeof import('./components/help/open-anki-connect-card.vue')['default']
     OpmlConfigs: typeof import('./components/mubu-opml/opml-configs.vue')['default']
